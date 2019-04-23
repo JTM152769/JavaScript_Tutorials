@@ -55,6 +55,13 @@ Similar tags can be any number in any places inside bodyor head. True, the locat
   </body>
 </html>
 ```
+The easiest way to start interacting with the browser is to call a function alert. Although in real code it is almost never used, but the creators of courses in which programming training is conducted through a browser are very fond of it. Click
+
+to see the result of this function.
+
+In addition alert to user interaction, you can use functions and
+All these functions are present only in browsers and are not available in server versions js. This is the first example when we see how the browser “expands” js, adding new features to it. But not the possibilities of the language itself, the language remains the same, but the possibilities of interaction with the environment.
+
 
 
 
