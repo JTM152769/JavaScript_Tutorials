@@ -62,10 +62,71 @@ to see the result of this function.
 In addition alert to user interaction, you can use functions and
 All these functions are present only in browsers and are not available in server versions js. This is the first example when we see how the browser “expands” js, adding new features to it. But not the possibilities of the language itself, the language remains the same, but the possibilities of interaction with the environment.
 
+## 2.2 External scripts
 
+Inline scripting is usually used for small pieces of code, or to call code loaded from external scripts. External scripts are loaded as follows:
 
+```javascript
+<body>
+<html>
+  <head>
+    <script src="/assets/application.js"></script>
+  </head>
+  <body>
+  </body>
+</html>
+```
+Quite often you can see a similar download option:
 
+```javascript
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script>
+```
+In the example above, the file is loaded from a [CDN](https://ru.wikipedia.org/wiki/Content_Delivery_Network). , which may have certain advantages in download speed.
 
+## 2.3 Speed
+Depending on where in the document the tags appear script, you can observe serious changes in both the speed of the site rendering and the download speed.
+
+## 2.4 Server (Nodejs) vs Client (Browser)
+The browser is missing a lot of those things that we used to deal with when working in a server environment. Among them:
+
+## 2.5 Standard library
+About library 4  you can forget. No out of the box assert, events, net, http, urland all the rest. For any simple task you will have to connect the library from npm.
+
+## 2.6 Modules
+Until recently, a modular system in browsers did not exist. Now it appears, but so far only in the experimental version.
+
+At the moment, any downloaded code works in the global scope. This behavior led to a large number of bypass maneuvers used everywhere for manual isolation of js pieces from each other.
+
+``` javascript
+<html>
+  <body>
+    <script>
+      const greeting = 'hello, world!';
+    </script>
+    <script>
+      alert(greeting);
+    </script>
+  </body>
+</html>
+```
+The most common method of isolation is called Immediately-Invoked Function Expression. Its principle of operation is extremely simple: all the code that must be executed in the browser is wrapped in an anonymous function, which is immediately called:
+
+```javascript
+(function() {
+ // some code…
+})();
+```
+As you will see later, modern assembly systems save us from having to do such manipulations with our hands. We can continue to use the usual and full javascript.
+
+## 2.7 Versions and engines
+Another major flaw jsin the browser is that the implementation jsin different browsers is different and sometimes quite significant. Moreover, even different versions of the same browser may differ catastrophically. Moreover, this problem cannot be solved; it is a consequence of the very nature of the frontend. Each user will have the browser that they like, the version to which he did not forget to upgrade.
+
+## 2.8 Assembly
+Fortunately, the modern world of the frontend was able to get out of this situation. We can still use all (almost) modern features js, including a system of modules. Perhaps this is due babelon the one hand and similar collectors webpackon the other. Well, it is impossible not to mention the polyfill, which will be devoted to a separate lesson.
+
+The principle of operation of this bundle is that the collector collects all our resources (css, fonts, images) and files with code according to certain rules, passes them through handlers, for example, babel, and we get files ready for use in the browser.
+
+![Screenshot](screenshot.png)
 
 
 
