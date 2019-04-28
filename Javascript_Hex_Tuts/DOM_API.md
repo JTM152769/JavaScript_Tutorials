@@ -125,8 +125,7 @@ Another major flaw jsin the browser is that the implementation jsin different br
 Fortunately, the modern world of the frontend was able to get out of this situation. We can still use all (almost) modern features js, including a system of modules. Perhaps this is due babelon the one hand and similar collectors webpackon the other. Well, it is impossible not to mention the polyfill, which will be devoted to a separate lesson.
 
 The principle of operation of this bundle is that the collector collects all our resources (css, fonts, images) and files with code according to certain rules, passes them through handlers, for example, babel, and we get files ready for use in the browser.
-
-![Screenshot](screenshot.png)
+![Assembly Image](https://github.com/JTM152769/JavaScript_Tutorials/blob/master/Javascript_Hex_Tuts/images/file.png)
 
 
 
